@@ -1,4 +1,10 @@
+#Generated Plot files
+plots/*.jpg
+
+#SDK Folder for reference
 Cognitive-Face-Python
+
+#Single Files to be ignored
 detect-face.py
 __pycache__
 key1.key
