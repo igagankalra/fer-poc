@@ -16,22 +16,23 @@ import random
 from PIL import Image
 from operator import itemgetter
 from db1 import data_entry
+from creds import KEY, BASE_URL
 
 
 style.use('fivethirtyeight')
 
-personGroupId = 'LogRhythm'
+# Replace with a valid Subscription Key in creds.py
+CF.Key.set(KEY)
 
+# Replace with your regional Base URL in creds.py
+CF.BaseUrl.set(BASE_URL)
+
+personGroupId = 'LogRhythm'
 absolute_path_string = 'IMG_20190915_123246.jpg'
 img_url = absolute_path_string
 img_data = absolute_path_string
 print(img_url)
 
-KEY = '4b10bd9fa0774240a18f95a08192b2c2'  # Replace with a valid Subscription Key here.
-CF.Key.set(KEY)
-
-BASE_URL = 'https://pocfaceapi.cognitiveservices.azure.com/face/v1.0'  # Replace with your regional Base URL
-CF.BaseUrl.set(BASE_URL)
 
 
 # image_path = os.path.join('trying\IMG_20190914_122355.jpg')
