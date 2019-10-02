@@ -52,5 +52,5 @@ def read_data(query, table_name):
     return row_data
 
 
-print(read_data('faceId, groupId', 'fer_poc'))
+# print(read_data('faceId, groupId', 'fer_poc'))
 # create_table()
