@@ -3,7 +3,7 @@
 import os
 import sys
 from io import BytesIO
-import time
+import datetime
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -15,8 +15,9 @@ import urllib
 import random
 from PIL import Image
 from operator import itemgetter
-from db1 import data_entry
+from db_operations import data_entry
 from creds import KEY, BASE_URL
+from save_to_flat_file import save_output_into_flat_file
 
 
 style.use('fivethirtyeight')
@@ -51,9 +52,12 @@ print(len(face_ids))
 
 # To get the emotion from the json result from the API for a given PIC
 for face in face_ids:
-    face_attribute = face["faceAttributes"]["emotion"]
+    face_attribute = face['faceAttributes']['emotion']
     print(max(face_attribute, key=face_attribute.get))
-    data_entry(personGroupId, img_url, face["faceId"], time.time())
+    #This saves the data to a Flat File
+    save_output_into_flat_file(personGroupId, img_url, face['faceId'], datetime.datetime.now())
+    #This makes entry to the Database.
+    data_entry(personGroupId, img_url, face['faceId'], datetime.datetime.now())
     print(face["faceId"], face_attribute)
 
 
@@ -87,5 +91,5 @@ def plot_image(img_url):
     plt.savefig('plots\\{}.jpg'.format(face['faceId']))
     plt.show()
 
-
-plot_image(img_url)
+#Uncomment this when you want to save output into staic image as well.
+# plot_image(img_url)
