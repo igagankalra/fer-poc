@@ -17,7 +17,7 @@ def create_table():
 
 def data_entry(personGroupId, img_url, face_id, time):
     """Method to add data into the fer_poc database
-    
+
     Arguments:
         personGroupId {String} -- This defines the client company{required for later use as we have to train using this}
         img_url {String} -- name of the file which is being uploaded{has to be changed by the client name when fully functional}
@@ -35,7 +35,7 @@ def data_entry(personGroupId, img_url, face_id, time):
 
 def read_data(query, table_name):
     """Method to read data from the database.
-    
+
     Arguments:
         query {String} -- The fields which has to be fetched.
         table_name {String} -- The table from which data has to be read.
