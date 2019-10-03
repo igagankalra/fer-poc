@@ -28,15 +28,18 @@ CF.Key.set(KEY)
 # Replace with your regional Base URL in creds.py
 CF.BaseUrl.set(BASE_URL)
 
+#using default group id for time being, this has to be dynamic i.e. Client name
 personGroupId = 'LogRhythm'
+
+#using static image for time being, has to be dynamic one, which will be generted every 30 seconds
 absolute_path_string = 'IMG_20190915_123246.jpg'
 img_url = absolute_path_string
 img_data = absolute_path_string
 print(img_url)
-	
-# Driver Code 
 
+# Driver Code
 
+#to get the no. of faces in the image with the emotion of those images.
 face_ids = CF.face.detect(img_url, attributes='emotion')
 
 # res = CF.person.create(personGroupId, 'user_abhi')
@@ -47,6 +50,7 @@ face_ids = CF.face.detect(img_url, attributes='emotion')
 # result = CF.face.identify(img_url)
 
 # print(res)
+#printing the number of faces found.
 print(len(face_ids))
 
 
@@ -61,14 +65,14 @@ for face in face_ids:
     print(face["faceId"], face_attribute)
 
 
-# for index, value in enumerate(face_ids): 
-#     print(index, value) 
+# for index, value in enumerate(face_ids):
+#     print(index, value)
 
 
 # To Display the image with stats
 def plot_image(img_url):
     """Method to plot the image with returned json result and save it to the disk
-    
+
     Arguments:
         img_url {String} -- Image name or the path.
     """
