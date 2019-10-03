@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# This is used to generate the Encryption key which is used to encrypt files
+# This is used to generate the Encryption key based on the common password which is used to encrypt files
 # and decrypt them as well.
 import base64
 import os
