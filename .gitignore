@@ -7,5 +7,7 @@ Cognitive-Face-Python
 #Single Files to be ignored
 detect-face.py
 __pycache__
+*/__pycache__/*
 key1.key
 creds.py
+__pycache__/*.pyc
