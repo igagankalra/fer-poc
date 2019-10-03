@@ -14,7 +14,7 @@ import cognitive_face as CF
 import urllib
 import random
 from PIL import Image
-from operator import itemgetter
+
 from db_operations import data_entry
 from creds import KEY, BASE_URL
 from save_to_flat_file import save_output_into_flat_file
